@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const {connection} = require("./configs/db")
 const {UserRoutes} = require("./routes/users.routes")
+const {PostRoutes} = require("./routes/posts.routes")
 const cors = require("cors")
 require("dotenv").config()
 
@@ -11,7 +12,8 @@ app.get("/",(req,res)=>{
     res.send("This is social media app backend")
 })
 
-app.use("/users",UserRoutes);
+app.use("/api",UserRoutes);
+app.use("/api",PostRoutes);
 
 
 app.listen(process.env.PORT,async()=>{
