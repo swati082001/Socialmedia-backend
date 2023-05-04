@@ -13,7 +13,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/api",UserRoutes);
-app.use("/api",PostRoutes);
+ app.use("/api",PostRoutes);
 
 
 app.listen(process.env.PORT,async()=>{
